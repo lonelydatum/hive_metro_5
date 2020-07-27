@@ -9,6 +9,25 @@ var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 
 TweenLite.defaultEase = Power3.easeInOut;
 
+function lb() {
+	var tl = new TimelineMax();
+	tl.set(".frame1", { opacity: 1 });
+	tl.from([".t1", ".t1a"], .3, { opacity: 0 });
+
+	tl.to(".t1a", .3, { opacity: 0 }, "+=1.8");
+	tl.from(".t1b", .3, { opacity: 0 });
+
+	tl.to(".t1b", .3, { opacity: 0 }, "+=1");
+	tl.from(".t1c", .3, { opacity: 0 });
+
+	tl.to(".t1c", .3, { opacity: 0 }, "+=1");
+	tl.from(".t1d", .3, { opacity: 0 });
+
+	tl.to(".frame1", .3, { opacity: 0 }, "+=1");
+	tl.to(".frame2", .3, { opacity: 1 });
+	// tl.to(".frame1", .3, {opacity:0})
+}
+
 function bb() {
 	var type = arguments.length <= 0 || arguments[0] === undefined ? "COMING_SOON" : arguments[0];
 
@@ -50,6 +69,7 @@ function dbb() {
 exports.size = size;
 exports.bb = bb;
 exports.dbb = dbb;
+exports.lb = lb;
 
 },{}],2:[function(require,module,exports){
 "use strict";

@@ -3,6 +3,26 @@ const size = {w:banner.offsetWidth, h:banner.offsetHeight}
 
 TweenLite.defaultEase = Power3.easeInOut
 
+function lb(){
+	const tl = new TimelineMax()
+	tl.set(".frame1", {opacity:1})
+	tl.from([".t1", ".t1a"], .3, {opacity:0})
+
+	tl.to(".t1a", .3, {opacity:0}, "+=1.8")
+	tl.from(".t1b", .3, {opacity:0})
+
+	tl.to(".t1b", .3, {opacity:0}, "+=1")
+	tl.from(".t1c", .3, {opacity:0})
+
+	tl.to(".t1c", .3, {opacity:0}, "+=1")
+	tl.from(".t1d", .3, {opacity:0})
+
+	tl.to(".frame1", .3, {opacity:0}, "+=1")
+	tl.to(".frame2", .3, {opacity:1})
+	// tl.to(".frame1", .3, {opacity:0})
+
+}
+
 
 function bb(type="COMING_SOON"){
 	const t2Time = type==="COMING_SOON" ? 1 : .6
@@ -44,4 +64,4 @@ function dbb(type="COMING_SOON"){
 
 
 
-export {size, bb, dbb}
+export {size, bb, dbb, lb}
