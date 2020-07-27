@@ -56,7 +56,7 @@ exports.dbb = dbb;
 
 var _commonJsCommonJs = require("../../_common/js/common.js");
 
-(0, _commonJsCommonJs.bb)("NOW_OPEN");
+(0, _commonJsCommonJs.dbb)();
 
 module.exports = {};
 

@@ -9,7 +9,7 @@ var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 
 TweenLite.defaultEase = Power3.easeInOut;
 
-function start() {
+function bb() {
 	var type = arguments.length <= 0 || arguments[0] === undefined ? "COMING_SOON" : arguments[0];
 
 	var t2Time = type === "COMING_SOON" ? 1 : .6;
@@ -18,21 +18,45 @@ function start() {
 	tl.from(".t1", .3, { opacity: 0 });
 	tl.to(".t1", .3, { opacity: 0 }, "+=1.8");
 
-	tl.from(".t2", .3, { opacity: 0 });
-	tl.from(".t2a", .3, { opacity: 0 }, "+=" + t2Time);
-	tl.to(".t2a", .3, { opacity: 0 }, "+=3");
+	tl.from([".t2", ".t2a"], .3, { opacity: 0 });
+	// tl.from(".t2a", .3, {opacity:0}, `+=${t2Time}`)
+	tl.to(".t2a", .3, { opacity: 0 }, "+=2.7");
 	tl.from(".t2b", .3, { opacity: 0 });
 }
 
+function dbb() {
+	var type = arguments.length <= 0 || arguments[0] === undefined ? "COMING_SOON" : arguments[0];
+
+	var t2Time = type === "COMING_SOON" ? 1 : .6;
+	var tl = new TimelineMax();
+	tl.set(".frame1", { opacity: 1 });
+
+	var delay = 2;
+	var time = .5;
+
+	tl.add("f1");
+	tl.to(".bg1", time, { opacity: 1 }, "f1");
+	tl.to([".bg2", ".bg3"], time, { opacity: 0 }, "f1");
+
+	tl.add("f2", "+=" + delay);
+	tl.to(".bg2", time, { opacity: 1 }, "f2");
+	tl.to([".bg1", ".bg3"], time, { opacity: 0 }, "f2");
+
+	tl.add("f3", "+=" + delay);
+	tl.to(".bg3", time, { opacity: 1 }, "f3");
+	tl.to([".bg1", ".bg2"], time, { opacity: 0 }, "f3");
+}
+
 exports.size = size;
-exports.start = start;
+exports.bb = bb;
+exports.dbb = dbb;
 
 },{}],2:[function(require,module,exports){
 "use strict";
 
 var _commonJsCommonJs = require("../../_common/js/common.js");
 
-(0, _commonJsCommonJs.start)("COMING_SOON");
+(0, _commonJsCommonJs.bb)("COMING_SOON");
 
 module.exports = {};
 

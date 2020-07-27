@@ -1,8 +1,8 @@
 
 
-import  {start} from  "../../_common/js/common.js"
+import  {bb} from  "../../_common/js/common.js"
 
-start("NOW_OPEN")
+bb("NOW_OPEN")
 
 module.exports = {};
 
