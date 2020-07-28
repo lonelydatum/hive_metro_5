@@ -8,9 +8,11 @@ var banner = document.getElementById('banner');
 var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 
 TweenLite.defaultEase = Power3.easeInOut;
+var date = new Date();
+var tl = new TimelineMax({ repeat: 1, repeatDelay: 2 });
 
 function lb() {
-	var tl = new TimelineMax();
+
 	tl.set(".frame1", { opacity: 1 });
 	tl.from([".t1", ".t1a"], .3, { opacity: 0 });
 
@@ -32,7 +34,7 @@ function bb() {
 	var type = arguments.length <= 0 || arguments[0] === undefined ? "COMING_SOON" : arguments[0];
 
 	var t2Time = type === "COMING_SOON" ? 1 : .6;
-	var tl = new TimelineMax();
+
 	tl.set(".frame1", { opacity: 1 });
 	tl.from(".t1", .3, { opacity: 0 });
 	tl.to(".t1", .3, { opacity: 0 }, "+=1.8");
@@ -47,7 +49,7 @@ function dbb() {
 	var type = arguments.length <= 0 || arguments[0] === undefined ? "COMING_SOON" : arguments[0];
 
 	var t2Time = type === "COMING_SOON" ? 1 : .6;
-	var tl = new TimelineMax();
+
 	tl.set(".frame1", { opacity: 1 });
 
 	var delay = 2;

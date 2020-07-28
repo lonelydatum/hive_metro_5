@@ -2,9 +2,11 @@ const banner = document.getElementById('banner')
 const size = {w:banner.offsetWidth, h:banner.offsetHeight}
 
 TweenLite.defaultEase = Power3.easeInOut
+const date = new Date()
+const tl = new TimelineMax({repeat:1, repeatDelay:2})
 
 function lb(){
-	const tl = new TimelineMax()
+	
 	tl.set(".frame1", {opacity:1})
 	tl.from([".t1", ".t1a"], .3, {opacity:0})
 
@@ -25,8 +27,9 @@ function lb(){
 
 
 function bb(type="COMING_SOON"){
+
 	const t2Time = type==="COMING_SOON" ? 1 : .6
-	const tl = new TimelineMax()
+
 	tl.set(".frame1", {opacity:1})
 	tl.from(".t1", .3, {opacity:0})
 	tl.to(".t1", .3, {opacity:0}, `+=1.8`)
@@ -40,7 +43,7 @@ function bb(type="COMING_SOON"){
 
 function dbb(type="COMING_SOON"){
 	const t2Time = type==="COMING_SOON" ? 1 : .6
-	const tl = new TimelineMax()
+	
 	tl.set(".frame1", {opacity:1})
 
 	const delay = 2
