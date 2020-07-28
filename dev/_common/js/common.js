@@ -3,7 +3,7 @@ const size = {w:banner.offsetWidth, h:banner.offsetHeight}
 
 TweenLite.defaultEase = Power3.easeInOut
 const date = new Date()
-const tl = new TimelineMax({repeat:1, repeatDelay:2})
+const tl = new TimelineMax({repeat:1, repeatDelay:2.3})
 
 function lb(){
 	

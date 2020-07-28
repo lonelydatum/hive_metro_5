@@ -9,7 +9,7 @@ var size = { w: banner.offsetWidth, h: banner.offsetHeight };
 
 TweenLite.defaultEase = Power3.easeInOut;
 var date = new Date();
-var tl = new TimelineMax({ repeat: 1, repeatDelay: 2 });
+var tl = new TimelineMax({ repeat: 1, repeatDelay: 2.3 });
 
 function lb() {
 
